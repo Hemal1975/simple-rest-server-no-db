@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Twitter bootstrap 3 Creativity</title>
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="callapse" data-target=".navbar-callapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Creativity Tuts</a>
+				</div>
+				
+				<div class="navbar-callapse callapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Bootstrap Tutorials</a></li>
+							<li><a href="#">Java Tutorials</a></li>
+							<li><a href="#">Css Tutorials</a></li>
+							<li><a href="#">Ajax Tutorials</a></li>
+						</ul>
+						</li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!----Coursel------->
+		<div id="myCarousel" class="carausel slide">
+			<ol class="carausel-indicatars">
+				<li data-target="myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="myCarousel" data-slide-to="1"></li>
+				<li data-target="myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carausel-inner">
+				<div class="item active">
+					<img src="img/a1.jpeg"/>
+					<div class="container">
+						<div class="carausel-caption">
+							<h1> My Heading text</h1>
+							<p>This tag will cantainer the text which we want to apper on out side.</p>
+							<p><a class="btn btn-large btn-primary">Sign Up</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="left carausel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevran-left"></span>
+			</a>
+			
+			<a class="right carausel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevran-right"></span>
+			</a>
+		</div>
+	</body>
+</html>

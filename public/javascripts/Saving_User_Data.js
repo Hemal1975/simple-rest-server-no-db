@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var x = {};
 	console.log(a);
 	$("#mySave").on("click",function(){
-		console.log(a);
+	//	console.log(a);
 		$("input").each(function(index){
 			x[$(a[index]).attr("name")]= $(a[index]).val();
 			$(a[index]).val("");

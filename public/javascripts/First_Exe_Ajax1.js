@@ -17,7 +17,7 @@ $(document).ready(function(){
 							  '<li>Lastname : '+result.Lastname+'</li>',
 							  '<li>Address : '+result.Address+'</li>',
 							  '<li>CellNo : '+result.CellNo+'</li>');
-					ab.append("<br>");			
+				//	ab.append("<br>");			
 				}
 		});
 	});

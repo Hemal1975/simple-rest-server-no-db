@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="js/bootstrap.js"></script>
+	<style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
+  </head>
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Creativity Tuts</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="feature.html">About</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Bootstrap</a></li>
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Css</a></li>
+									<li><a href="#">PHP</a></li>
+								</ul>
+						</li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+		
+	<!--Accoradion=====-->
+	<br/><br/><br/>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Accoradion</h2><hr/>
+				
+				<div class="panel-group" id="accordian">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordian" href="#section1">
+								Question 1
+								</a>
+							</h4>
+						</div>
+						<div class="panel-callapse callapse" id="section1">
+							<div class="panel-body">
+								This will contain some text....
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordian" href="#section1">
+								Question 2
+								</a>
+							</h4>
+						</div>
+						<div class="panel-callapse callapse in" id="section1">
+							<div class="panel-body">
+								This will contain some text....
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordian" href="#section1">
+								Question 3
+								</a>
+							</h4>
+						</div>
+						<div class="panel-callapse callapse in" id="section1">
+							<div class="panel-body">
+								This will contain some text....
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Tab=================-->
+	<div class="contanier">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Tab</h2><hr/>
+				
+				<!--Tabs Navigation-->
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+					<li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+					<li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+				</ul>
+				<!--Tab Section-->
+				<div class="tab-content">
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+							This is our 1st Tab...This is our 1st Tab...
+							This is our 1st Tab...This is our 1st Tab...
+							This is our 1st Tab...This is our 1st Tab...
+							This is our 1st Tab...This is our 1st Tab...
+							This is our 1st Tab...This is our 1st Tab...
+							This is our 1st Tab...This is our 1st Tab...
+						</div>
+						<div class="tab-pane" id="tab2">
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						</div>
+						<div class="tab-pane" id="tab3">
+						This is our 3nd tab....This is our 3nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						This is our 2nd tab....This is our 2nd tab....
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Tootips and Popovers======-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2> Tootips</h2><hr/>
+				<a class="btn btn-primary" id="myToolTip" href="#" data-toggle="tooltip" title="My Tooltip Text" data-placement="right">
+				Tooltip
+				</a>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h2> Popovers</h2><hr/>
+					<button id="myPopOver" class="btn btn-danger" data-toggle="popover" title="My Title" data-content="This will be the body text"> 
+						Popover
+					</button>
+			</div>
+		</div>
+	</div>
+	<!--Content Hover=====-->
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img id="d1" src="a1.jpg" />
+				<div class="contenthover">
+				<h3>Lorem ipsum dolor</h3>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+				<p><a href="#" class="mybutton">Lorem ipsum</a></p>
+			</div>
+			</div>
+			
+			<div class="col-md-3 col-md-offset-2">
+				<img id="d2" src="a1.jpg" />
+				<div class="contenthover">
+				<h3>Lorem ipsum dolor</h3>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+				<p><a href="#" class="mybutton">Lorem ipsum</a></p>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer and Modal-->
+<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<hr/>
+				<p>Copyright &copy; Creativity tuts.
+					<a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+				</p>
+				<!--Modal-->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h2>Terms and Conditions</h2>
+							</div>
+							<div class="modal-body">
+								<h2>The text will go here....</h2>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$("#myToolTip").tooltip();
+			$("#myPopOver").popover();
+			$('#d1').contenthover({
+				overlay_background:'#000',
+				overlay_opacity:0.8
+			});
+			$('#d2').contenthover({
+				effect:'slide',
+				slide_speed:300,
+				overlay_background:'#000',
+				overlay_opacity:0.8
+			});
+		});
+	</script>
+	<script src="js/contentHover.js"></script>
+	</body>
+</html>

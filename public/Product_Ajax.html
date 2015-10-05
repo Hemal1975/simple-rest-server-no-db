@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Bootstrap Case</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	  <script src="Javascripts/Product_Ajax.js"></script>
+	</head>
+	<body>
+
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div>
+		  <ul class="nav navbar-nav">
+			<li><a href="#">Store</a></li>
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Catalog</a></li>
+			<li><a href="#">Contact</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+
+	<div class="container col-md-2" style="margin-left:20px">
+		<div class="row">
+			<div class="list-group">
+				<a href="#" class="list-group-item active">Cars justo odio</a>
+				<a href="#" class="list-group-item">Dapibus ac facilitis in</a>
+				<a href="#" class="list-group-item">Morbi ieo risus</a>
+				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
+				<a href="#" class="list-group-item">Vestibulum at eros</a>
+			  </div>
+		  </div>
+	</div>	
+	
+	<div class="container col-md-9">
+	  <form class="form-inline" role="form">
+		<div class="form-group">
+		  <label for="email" style="margin-left:10px">Search</label>
+		  <input type="text" class="form-control" id="mySearch" placeholder="Search by Item Name...">
+		</div><br/><br/>
+		  <div class="form-group">
+		   <label for="text" style="margin-left:10px">Add Item</label>
+		  <input type="text" id="inputItem" class="form-control" name="Item" placeholder="Item Name...">
+		  <input type="text" id="inputDescription" class="form-control" name="Description" placeholder="Description...">
+		  <input type="number" id="inputPrice" class="form-control" name="Price" placeholder="Price...">
+		  <button type="button" id="myAdd">Add</button>
+		</div>
+	  </form><br/><br/>
+		<div class="container" id="myData">
+		</div>
+	 </div>
+</body>
+</html>
