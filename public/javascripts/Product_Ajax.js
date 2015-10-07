@@ -2,12 +2,12 @@ $(document).ready(function(){
 	var a = $("input");
 	var x = {};
 	$.ajax({
-						url : "/users",
-						type: "Get",
-						data: "x",
-						success : function(result){
-							console.log(result.length);
-							for(var i=0;i<result.length;i++){
+			url : "/users",
+			type: "Get",
+			data: "x",
+			success : function(result){
+					console.log(result.length);
+						for(var i=0;i<result.length;i++){
 								var pc = $("<div class='well well-lg col-md-9'></div>").append("<b id=myItem>"+result[i].Item+"</b>",
 								"<span type=button class='btn btn-primary' style='margin-left:550px' id=myPrice> $"+ result[i].Price +"</span>",
 								"<button id="+result[i].id+" class='delete glyphicon glyphicon-remove pull-right'></button></br>",
@@ -41,13 +41,15 @@ $(document).ready(function(){
 		});
 	});
 	$("#myData").on("click","button",function(){
-		$(this).parent("div").remove();
+	var abc = $(this).parent("div");
 		$.ajax({
 				url:"http://localhost:3000/users/" + this.id,
 				type:"delete",
 				data: x,
 				success: function(result){
-					$(this).remove();
+					abc.remove();
+				//	console.log(this);
+				//	$(this).parent("div.well").remove();
 				}
 		});
 	});
