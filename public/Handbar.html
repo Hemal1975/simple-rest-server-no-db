@@ -21,10 +21,13 @@
 					auther: 'Jeffrey Way',
 					tweet: '30 Days to Learn jquery Rocks'
 				};
-				var template = Handlebars.compile($('#template').html() );
+				var template = Handlebars.compile($('#template').html());
+				$("#mydata").append(template());
 				console.log(template);
-			})();
+			});
 		</script>
+		<div id="mydata">
+		</div>
 			
 	</body>
 </html>

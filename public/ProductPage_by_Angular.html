@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="javascripts/ProductPage_by_Angular.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+	<body data-ng-app="listitem" >
+	<!--navigation-->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			<a href="#" class="navbar-brand">Store</a>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index2.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="feature.html">Catalog</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--side bar -->
+	<div class="list-group">
+        <div class="container col-sm-2" style="padding:20px">
+				<a href="#" class="list-group-item active">First item</a>
+				<a href="#" class="list-group-item">Second item</a>
+				<a href="#" class="list-group-item">Third item</a>
+				<a href="#" class="list-group-item">Forth item</a>
+				<a href="#" class="list-group-item">Fifth item</a>
+			</div>
+    </div>
+		
+	<div class="container col-sm-8" id="d1" data-ng-controller="itemctrl as app">
+	
+				<form class="form-inline" role="form">
+					<div class="form-group">
+					  <label for="search">Search:</label>
+					  <input type="search" class="form-control" id="search" placeholder="Serach by item name" data-ng-model="searchtext">
+					</div>
+				</form>
+				<form class="form-inline" role="form" style="align:left;padding:10px;">
+					<div class="form-group">
+						<label for="search">Add Item:</label>
+						<label class="sr-only" for="additem" style="align:left">Add Item:</label>
+						<input type="text" class="form-control" id="additem" name="additem" placeholder="Item Name" data-ng-model="app.prolist.itmname">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="description">Description:</label>
+						<input type="text" class="form-control" id="description" placeholder="Description" data-ng-model="app.prolist.itmdesc">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="price">Price:</label>
+						<input type="text" class="form-control" id="price" placeholder="Price" data-ng-model="app.prolist.itmprice">
+					</div>
+						<button type="button" class="btn btn-primary" data-ng-click="app.appenddata(app.prolist)">Add</button>
+						<span class="error" style="display:none"> Please Enter Valid Data</span>
+				</form>
+				
+				<div class="page" data-ng-repeat="product in app.pro |filter:searchtext">
+						<div class="alert alert-success" data-ng-model="hidedata">
+							<h4>{{product.item | uppercase}}</h4> 
+							<span class="glyphicon glyphicon-remove-sign pull-right" style="margin-left:80px" data-ng-model="id" data-ng-click="app.deletedata(product.id)">{{product.id}}</span>
+							<a href="#" class="btn btn-primary pull-right" style="margin-bottom:30px">{{product.price|currency}}</a>
+							<p>{{product.desc}}</p>
+						</div>
+				</div>
+	</div>
+	<!--footer and modal-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<hr/>
+				<p>Copyright &copy; Creativity tuts.
+					<a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+				</p>
+				<!--Modal-->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h2>Terms and Conditions</h2>
+							</div>
+							<div class="modal-body">
+								<h2>The text will go here....</h2>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

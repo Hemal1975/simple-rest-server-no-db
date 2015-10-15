@@ -1,16 +1,15 @@
 $(document).ready(function(){
-	
 	var a = $("input");
 	var x = {};
 	$.ajax({
-			url : "/users/" ,
+			url : "/users/",
 			type: "Get",
-			data: x,
+			data: "x",
 			success : function(result){
 					console.log(result.length);
 						for(var i=0;i<result.length;i++){
-								var template = Handlebars.compile($("#first-template").html());
-								$("div.myPage").append(template(result[i]));
+							var template = Handlebars.compile($("#mytemplate").html());
+							$("div.myPage").append(template(result[i]));
 							}
 						}
 					});
@@ -25,25 +24,25 @@ $(document).ready(function(){
 		}); 
 		$.ajax({
 				url : "/users",
-				type: "Post" ,
+				type: "Post",
 				data: {item,price,desc},
 				success:function(resu){
-					console.log(resu);
-					var template = Handlebars.compile($("#first-template").html());
-						 $("div.myPage").append(template(resu));				
+					var template = Handlebars.compile($("#mytemplate").html());
+						 $("div.myPage").append(template(resu));
+								
 				}			
 		});
 	});
 	$("div").on("click","span.glyphicon",function(){
-	var abc = $(this).closest("div");
+	var abc = $(this).parent("div");
+	console.log(abc);
 		$.ajax({
-				url:"/users/" + this.id,
+				url:"http://localhost:3000/users/" + this.id,
 				type:"delete",
-				data:{ x } ,
+				data: x,
 				success: function(result){
 					abc.remove();
 				}
 		});
-		return false;
 	});
 });
