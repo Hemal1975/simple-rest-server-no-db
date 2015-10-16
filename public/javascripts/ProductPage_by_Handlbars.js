@@ -1,5 +1,4 @@
-$(document).ready(function(){
-	
+$(document).ready(function(){	
 	var a = $("input");
 	var x = {};
 	$.ajax({
@@ -8,10 +7,10 @@ $(document).ready(function(){
 			data: x,
 			success : function(result){
 					console.log(result.length);
-						for(var i=0;i<result.length;i++){
+					//	for(var i=0;i<result.length;i++){
 								var template = Handlebars.compile($("#first-template").html());
-								$("div.myPage").append(template(result[i]));
-							}
+								$("div.myPage").append(template(result));
+						//	}
 						}
 					});
 	$("#myAdd").click(function(){
