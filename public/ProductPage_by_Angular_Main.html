@@ -4,11 +4,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="javascripts/ProductPage_by_Angular_Main.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="javascripts/ProductPage_by_Angular_Main.js"></script>
 	</head>
+	
 <body ng-app="myItem">
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
@@ -45,12 +46,12 @@
 	<div class="container col-sm-8" id="d1" data-ng-controller="contactController">
 		
 		<form class="form">
-					<div class="form-inline" style="margin-left:10px">
+					<div class="form-inline">
 					  <label for="search">Search:</label>
 					  <input type="search" class="form-control" id="search" data-ng-model="item" placeholder="Serach by item name" />
 					</div>
 		</form>
-		<form class="form-inline" role="form" style="align:left;padding:10px;">
+		<form class="form-inline">
 					<div class="form-group">
 						<label for="search">Add Item:</label>
 						<label class="sr-only" for="additem" style="align:left">Add Item:</label>
@@ -64,17 +65,19 @@
 						<label class="sr-only" for="price">Price:</label>
 						<input type="text" class="form-control" id="price" placeholder="Price" name="price" ng-model="prolist.price" />
 					</div>
-						<input type="hidden" ng-model="app.prolist.id" />
+						<input type="hidden" ng-model="prolist.id" />
 						<button type="button" class="btn btn-primary" data-ng-click="appenddata(prolist)">Add</button>
-						<button type="button" class="btn btn-primary" data-ng-click="saveData(prolist)">Save</button>
+						<button type="button" class="btn btn-primary" data-ng-click="saveData(prolist)">Update</button>
 						<span class="error" style="display:none"> Please Enter Valid Data</span>				
 		</form>
 		
 		<div class="myPage" data-ng-repeat="contact in contacts | filter:item">
+
 			<div class="alert alert-success">
 				<h4>{{contact.item}}</h4>
-				<span class="glyphicon glyphicon-remove-sign pull-right" style="margin-left:20px" data-ng-model="id" data-ng-click="deleteData(contact.id)">{{contact.id}}</span>
-				<a href="#" class="btn btn-primary pull-right" style="margin-bottom:5px">{{contact.price}}</a>
+				<span class="glyphicon glyphicon-remove-sign pull-right" 
+				style="margin-left:20px" data-ng-click="deleteData(contact.id)">{{contact.id}}</span>
+				<a href="#" class="btn btn-primary pull-right" style="margin-bottom:5px">{{contact.price | currency}}</a>
 				<h4>{{contact.desc}}</h4>
 				<button type="button" class="btn btn-primary" data-ng-click="editData(contact.id)">Edit</button>
 			</div>

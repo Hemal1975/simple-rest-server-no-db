@@ -1,17 +1,21 @@
 var app = angular.module("myItem",['ngRoute']);
-		
+	
 	app.controller("contactController",function($scope,$http){
 		
 			$http.get("/users").success(function(data){
-				$scope.contacts=data;
+			$scope.contacts=data;
 			});
+			
 		$scope.appenddata = function(prolist){
 		$http.post("/users",prolist).success(function(data){
+			
 				$scope.contacts.push(
 					{
-							item:$scope.prolist.item,
-							desc:$scope.prolist.desc,
-							price:$scope.prolist.price
+							item:data.item,
+							desc:data.desc,
+							price:data.price,
+							id:data.id
+
 					});
 							$scope.prolist.item="",
 							$scope.prolist.desc="",
@@ -21,8 +25,10 @@ var app = angular.module("myItem",['ngRoute']);
 		$scope.deleteData = function(id) {   
 			for(i in $scope.contacts) {
 				if($scope.contacts[i].id == id) {
-					$scope.contacts.splice(i,1);
-				   $http.delete("/users/"+ id);
+				   $http.delete("/users"+ "/" + id).success(function(id){
+					$scope.contacts.splice(i,1);   
+				   });
+				   
 				}
 			}    
 		}
