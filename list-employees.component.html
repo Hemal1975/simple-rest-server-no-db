@@ -1,0 +1,93 @@
+<h4>Employee Details</h4>
+<!-- <div class="card mb-5" *ngFor="let employee of employees">
+  <!-- <div class="card-header">
+    <h3 class="card-title">{{employee.name}}</h3>
+  </div>
+  <div class="card-body">
+
+    <div class="col-xs-10">
+
+      <div class="row vertical-align">
+
+        <div class="col-xs-4">
+          <img class="imageClass" [src]="employee.photoPath" />
+        </div>
+        <div class="col-md-12">
+
+          <div class="row">
+            <div class="col-md-3">
+              Gender
+            </div>
+            <div class="col-md-3">
+              : {{employee.gender}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Date of Birth
+            </div>
+            <div class="col-xs-6">
+              : {{employee.dateOfBirth | date}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Contact Preference
+            </div>
+            <div class="col-xs-6">
+              : {{employee.contactPreference}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Phone
+            </div>
+            <div class="col-xs-6">
+              : {{employee.phoneNumber}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Email
+            </div>
+            <div class="col-xs-6">
+              : {{employee.email}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Department
+            </div>
+            <div class="col-xs-6">
+              : {{employee.department}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Is Active
+            </div>
+            <div class="col-xs-6">
+              : {{employee.isActive}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div> --
+  <app-display-employee [employee]="employee"></app-display-employee>
+</div> -->
+<button (click)="viewNexeEmployee()" class="btn btn-success">View Next Employee</button><br>
+<h1 #headerTag>
+
+</h1>
+<div class="card mb-5 cursonPointer" *ngFor="let employee of employees">
+  <div (click)="onClickEmployee(employee.id)">
+    <app-display-employee 
+    [employee]="employee"
+    (click)="headerTag.innerHTML = childComponent.getEmployeeNameAndGender()"
+    #childComponent
+    ></app-display-employee>
+  </div>  
+</div>
